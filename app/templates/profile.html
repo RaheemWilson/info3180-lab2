@@ -3,8 +3,35 @@
 {% block main %}
 <div class="profile-container">
     <div class="profile-content">
-        <div class="image-container">
-            <img src={{ url_for() }} alt="">
+        <div class="biography">
+            <div class="image-container">
+                <img src="{{ url_for('static', filename='/images/profile.jpeg') }}" alt="Raheem Wilson's profile">
+            </div>
+            <h1 class="name">Raheem Wilson</h1>
+            <p class="username">@zackiechan</p>
+            <p class="location">Kingston, Jamaica</p>
+            <p class="date-joined">Joined {{ date_joined }}</p>
+        </div>
+        <div class="profile-description">
+            <p class="profile-summary">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Obcaecati, fugit iure totam voluptatum deleniti voluptatibus laborum aliquam libero fuga delectus ratione repudiandae quis cupiditate dignissimos minus sapiente itaque esse corporis veniam.
+            </p>
+            <ul class="profile-stats">
+                <li>
+                    <p class="stats">7</p>
+                    <p class="stats-name">Posts</p>
+                </li>
+                <li>
+                    <p class="stats">200</p>
+                    <p class="stats-name">Following</p>
+                </li>
+                <li>
+                    <p class="stats">350</p>
+                    <p class="stats-name">Followers</p>
+                </li>
+            </ul>
+            <button class="follow-btn">Follow</button>
         </div>
     </div>
 </div>

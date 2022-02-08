@@ -13,6 +13,9 @@ from flask import render_template, request, redirect, url_for, flash
 # Routing for your application.
 ###
 
+import datetime
+
+
 @app.route('/')
 def home():
     """Render website's home page."""
@@ -27,8 +30,12 @@ def about():
 @app.route('/profile')
 def profile():
     """Render the website's profile page."""
-    return render_template('profile.html')
+    return render_template('profile.html', date_joined=format_date_joined((2020, 1, 4)))
 
+def format_date_joined(date):
+    month, year, day = date
+    date_joined = datetime.date(month, year, day) # a specific date
+    return date_joined.strftime("%B, %Y")
 
 ###
 # The functions below should be applicable to all Flask apps.
